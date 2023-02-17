@@ -3,7 +3,7 @@ import requests
 
 def weather(core):
     location = text_string.get()
-    api = "https://api.openweathermap.org" #Here insert your api key
+    api = "https://api.openweathermap.org/data/2.5/weather?q=" +location +"&appid=d4dea7c371ba0e3af72e9eb0b5ba2a88"
     json_data = requests.get(api).json()
     condition = json_data['weather'][0]['main']
     temp = int(json_data['main']['temp'] -273.15)
@@ -41,4 +41,3 @@ label3 = tk.Label(core, font = x)
 label3.pack()
 
 core.mainloop()
-
